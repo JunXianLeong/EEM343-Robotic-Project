@@ -7,3 +7,6 @@ Location of Main files:
 2) ROS Control files: i)/grape_robot_gazebo/controller/"controller".yaml
                       ii)grape_robot_moveit_config/controller/"controller".yaml
 3) Python file used for Trajectory planning: /grobot_trajectory_planning/src/grobot_commander.py
+
+If you want to watch my trajectory planning demo, click on the link below:
+https://drive.google.com/file/d/1HRo65S2fUXBaIiG0Ccc3JlArYPnmMcen/view?usp=sharing

@@ -1,0 +1,8 @@
+gripper_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - grip_rightjoint
+     - grip_leftjoint
+  state_publish_rate:  25
+  action_monitor_rate: 10
+

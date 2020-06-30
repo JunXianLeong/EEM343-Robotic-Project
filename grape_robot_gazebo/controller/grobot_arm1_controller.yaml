@@ -1,0 +1,10 @@
+grobot_arm1_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - arm1_joint1
+     - arm1_joint2
+     - arm1_joint3
+     - arm1_joint4
+  state_publish_rate:  25
+  action_monitor_rate: 10
+

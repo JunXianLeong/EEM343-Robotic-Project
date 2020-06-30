@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="grape_robot">
+    <link name="car_base_link">
+        
+<inertial>
+            <origin xyz="0.00580731393949363 0 0.270806051655572" rpy="0 0 0" />
+            <mass value="1894.1631388638" />
+            <inertia ixx="396.671761506115" ixy="6.68465765301392E-15" ixz="-2.24613343178872" iyy="1331.09215138841" iyz="3.29919736515526E-15" izz="1654.47156695622" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/car_base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 0 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/car_base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_link1">
+        
+<inertial>
+            <origin xyz="-7.6124523351595E-13 7.92699239582362E-13 0.149999999887995" rpy="0 0 0" />
+            <mass value="61.8726812758105" />
+            <inertia ixx="1.47461451392567" ixy="1.86538823425813E-15" ixz="6.16172452801016E-13" iyy="1.47461451392568" iyz="-1.90839669253435E-13" izz="2.03314801318378" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wheel_joint1" type="continuous">
+        <origin xyz="-1.05329616030303 -0.45 -0.00521228742180946" rpy="1.5707963267949 0 0" />
+        <parent link="car_base_link" />
+        <child link="wheel_link1" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="wheel_link2">
+        
+<inertial>
+            <origin xyz="-1.01429975529754E-12 -4.03899136358632E-13 0.149999999887996" rpy="0 0 0" />
+            <mass value="61.8726812758106" />
+            <inertia ixx="1.47461451392568" ixy="-5.4783695306559E-15" ixz="4.05478979899536E-13" iyy="1.47461451392568" iyz="4.94236670871198E-13" izz="2.03314801318379" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wheel_joint2" type="continuous">
+        <origin xyz="1.04973884255006 -0.45 -0.0158067771836876" rpy="1.5707963267949 0 0" />
+        <parent link="car_base_link" />
+        <child link="wheel_link2" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="wheel_link3">
+        
+<inertial>
+            <origin xyz="1.01456343326589E-12 -4.04121180963557E-13 -0.149999999887996" rpy="0 0 0" />
+            <mass value="61.8726812758105" />
+            <inertia ixx="1.47461451392567" ixy="3.16036295445978E-15" ixz="4.06127407398854E-13" iyy="1.47461451392567" iyz="-4.94095875049958E-13" izz="2.03314801318378" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wheel_joint3" type="continuous">
+        <origin xyz="-1.05571050598439 0.75 -0.00891511020055424" rpy="1.5707963267949 0 3.14159265358979" />
+        <parent link="car_base_link" />
+        <child link="wheel_link3" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="wheel_link4">
+        
+<inertial>
+            <origin xyz="1.01474384450739E-12 -4.04343225568482E-13 -0.149999999887996" rpy="0 0 0" />
+            <mass value="61.8726812758105" />
+            <inertia ixx="1.47461451392568" ixy="6.65030144493302E-15" ixz="4.06278849969646E-13" iyy="1.47461451392568" iyz="-4.93806348865881E-13" izz="2.03314801318378" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/wheel_link4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="wheel_joint4" type="continuous">
+        <origin xyz="1.05 0.75 -0.01" rpy="1.5707963267949 0 3.14159265358979" />
+        <parent link="car_base_link" />
+        <child link="wheel_link4" />
+        <axis xyz="0 0 -1" />
+    </joint>
+    <link name="basket_link">
+        
+<inertial>
+            <origin xyz="5.55111512312578E-17 0 0.305781840792512" rpy="0 0 0" />
+            <mass value="45.3934969327129" />
+            <inertia ixx="3.74116884013512" ixy="1.33635163861004E-16" ixz="-2.48732887569486E-15" iyy="3.74116884013513" iyz="2.91329140288193E-15" izz="3.11198640550683" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/basket_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/basket_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="basket_joint" type="fixed">
+        <origin xyz="-1.2 0 0.45" rpy="0 0 0" />
+        <parent link="car_base_link" />
+        <child link="basket_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+    <link name="arm1_base_link">
+        
+<inertial>
+            <origin xyz="-4.44089209850063E-16 1.11022302462516E-16 0.0457907228954795" rpy="0 0 0" />
+            <mass value="14.2823342166498" />
+            <inertia ixx="0.216354531828994" ixy="9.80697005085562E-18" ixz="-1.11648389865987E-18" iyy="0.216354531828995" iyz="-9.54727584171079E-18" izz="0.411014437215888" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 1 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm1_base_joint" type="fixed">
+        <origin xyz="-0.4 0 0.45" rpy="0 0 1.5707963267949" />
+        <parent link="car_base_link" />
+        <child link="arm1_base_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+    <link name="arm1_link1">
+        
+<inertial>
+            <origin xyz="0 -1.11022302462516E-16 0.138894448505083" rpy="0 0 0" />
+            <mass value="14.7706616501684" />
+            <inertia ixx="0.176977241495752" ixy="-0.001184916820133" ixz="-2.04248028553814E-17" iyy="0.188391317113086" iyz="-3.01943399696904E-18" izz="0.122105378162113" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 1 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm1_joint1" type="continuous">
+        <origin xyz="0 0 0.0700000000000001" rpy="0 0 0" />
+        <parent link="arm1_base_link" />
+        <child link="arm1_link1" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="arm1_link2">
+        
+<inertial>
+            <origin xyz="0.6 -8.88178419700125E-16 0.0525000000000001" rpy="0 0 0" />
+            <mass value="38.0892038860767" />
+            <inertia ixx="0.248336311424493" ixy="-2.08166817117217E-16" ixz="-5.41233724504764E-16" iyy="4.55187605424207" iyz="-5.55111512312578E-17" izz="4.44527028775544" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 1 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm1_joint2" type="revolute">
+        <origin xyz="-0.00536439703200209 0.0522252165575512 0.300000000000003" rpy="1.5707963267949 -1.30911679597271 0.102357632412451" />
+        <parent link="arm1_link1" />
+        <child link="arm1_link2" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="5000.0" velocity="10.0" />
+    </joint>
+    <link name="arm1_link3">
+        
+<inertial>
+            <origin xyz="0.6 -4.44089209850063E-16 5.55111512312578E-17" rpy="0 0 0" />
+            <mass value="15.8951879872733" />
+            <inertia ixx="0.0337520465909674" ixy="-4.68375338513738E-17" ixz="6.50521303491303E-17" iyy="2.14536372200935" iyz="1.38777878078145E-17" izz="2.1499083606737" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 1 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm1_joint3" type="revolute">
+        <origin xyz="1.2 0 0.0525000000000002" rpy="0 0 -1.17332411449794" />
+        <parent link="arm1_link2" />
+        <child link="arm1_link3" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="5000.0" velocity="10.0" />
+    </joint>
+    <link name="arm1_link4">
+        
+<inertial>
+            <origin xyz="0.115301970433014 2.36020714083907E-08 0.0525003002259287" rpy="0 0 0" />
+            <mass value="2.62487859261603" />
+            <inertia ixx="0.00962569479405697" ixy="3.38052672535722E-09" ixz="7.27809743520779E-08" iyy="0.0145548779695701" iyz="1.96549208045398E-08" izz="0.0137689402193358" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm1_link4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm1_joint4" type="revolute">
+        <origin xyz="1.2 0 -0.0524999999999995" rpy="0 0 -0.0905233022204321" />
+        <parent link="arm1_link3" />
+        <child link="arm1_link4" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="10.0" />
+    </joint>
+    <link name="grip_rightlink">
+        
+<inertial>
+            <origin xyz="0.066619562014389 0.0148545913482052 0.0150000000000001" rpy="0 0 0" />
+            <mass value="0.198139867656488" />
+            <inertia ixx="7.83981468618566E-05" ixy="-0.000114503714158254" ixz="-3.01967245696158E-19" iyy="0.000455719454816794" iyz="-2.18534500391609E-19" izz="0.000504396621530177" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/grip_rightlink.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/grip_rightlink.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="grip_rightjoint" type="revolute">
+        <origin xyz="0.18 -0.015 0.1025" rpy="-1.5708 -1.5708 0" />
+        <parent link="arm1_link4" />
+        <child link="grip_rightlink" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="1.57" effort="10.0" velocity="10.0" />
+    </joint>
+    <link name="grip_leftlink">
+        
+<inertial>
+            <origin xyz="-0.0148545913482054 0 -0.066619562014389" rpy="0 0 0" />
+            <mass value="0.198139867656488" />
+            <inertia ixx="0.000455719454816793" ixy="-1.18584612615602E-19" ixz="-0.000114503714158255" iyy="0.000504396621530175" iyz="-3.63800650845722E-19" izz="7.83981468618551E-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/grip_leftlink.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/grip_leftlink.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="grip_leftjoint" type="revolute">
+        <origin xyz="0.18 0 0.0025" rpy="0 0 3.1416" />
+        <parent link="arm1_link4" />
+        <child link="grip_leftlink" />
+        <axis xyz="0 1 0" />
+        <limit lower="0" upper="1.57" effort="10.0" velocity="10.0" />
+    </joint>
+    <link name="arm2_base_link">
+        
+<inertial>
+            <origin xyz="0 2.22044604925031E-16 0.0457907228954795" rpy="0 0 0" />
+            <mass value="14.2823342166498" />
+            <inertia ixx="0.216354531828994" ixy="-2.2204460492503E-17" ixz="2.87322569476366E-18" iyy="0.216354531828995" iyz="-1.41788600953455E-17" izz="0.411014437215888" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_base_joint" type="fixed">
+        <origin xyz="0.9 0 0.45" rpy="0 0 1.5707963267949" />
+        <parent link="car_base_link" />
+        <child link="arm2_base_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+    <link name="arm2_link1">
+        
+<inertial>
+            <origin xyz="0 -4.44089209850063E-16 0.138894448505083" rpy="0 0 0" />
+            <mass value="14.7706616501684" />
+            <inertia ixx="0.176855530860698" ixy="-6.93889390390723E-18" ixz="-1.87191373883066E-17" iyy="0.18851302774814" iyz="3.09652755147744E-18" izz="0.122105378162113" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_joint1" type="continuous">
+        <origin xyz="0 0 0.0700000000000001" rpy="0 0 -0.0533709369463015" />
+        <parent link="arm2_base_link" />
+        <child link="arm2_link1" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="arm2_link2">
+        
+<inertial>
+            <origin xyz="0.6 0 0.0525000000000004" rpy="0 0 0" />
+            <mass value="38.0892038860767" />
+            <inertia ixx="0.248336311424493" ixy="-2.22044604925031E-16" ixz="-7.56339435525888E-16" iyy="4.55187605424207" iyz="0" izz="4.44527028775544" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_joint2" type="revolute">
+        <origin xyz="0 0.0525000000000022 0.300000000000006" rpy="1.5707963267949 -1.26654740585129 0" />
+        <parent link="arm2_link1" />
+        <child link="arm2_link2" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="10.0" />
+    </joint>
+    <link name="arm2_link3">
+        
+<inertial>
+            <origin xyz="0.453975766570342 -1.33226762955019E-15 0.000220875920573071" rpy="0 0 0" />
+            <mass value="12.2231802347404" />
+            <inertia ixx="0.0258541672578399" ixy="-1.05384451165591E-16" ixz="-0.00120417898482214" iyy="0.983562956407477" iyz="1.73472347597681E-17" izz="0.98696722198229" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_joint3" type="revolute">
+        <origin xyz="1.20000000000001 0 0.0525000000000013" rpy="0 0 -0.970349670727532" />
+        <parent link="arm2_link2" />
+        <child link="arm2_link3" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="10.0" />
+    </joint>
+    <link name="arm2_link4">
+        
+<inertial>
+            <origin xyz="0 -0.00302605180463056 -0.0383650785949965" rpy="0 0 0" />
+            <mass value="1.57381909523615" />
+            <inertia ixx="0.00391501227913989" ixy="5.70264931738958E-19" ixz="2.11419423634673E-18" iyy="0.00392883927742793" iyz="-5.54108258428833E-05" izz="0.00364961256262644" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 0.501960784313725 0.501960784313725 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_joint4" type="revolute">
+        <origin xyz="0.900000000000002 0 -0.0774999999999988" rpy="0 0 -0.296485833526196" />
+        <parent link="arm2_link3" />
+        <child link="arm2_link4" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="50.0" velocity="10.0" />
+    </joint>
+    <link name="arm2_link5">
+        
+<inertial>
+            <origin xyz="-0.00758695627207695 2.22044604925031E-16 0.056641504407962" rpy="0 0 0" />
+            <mass value="0.848992580818123" />
+            <inertia ixx="0.0017174124569853" ixy="-2.71050543121376E-19" ixz="0.00011825201930143" iyy="0.00151439261603278" iyz="2.64062521306528E-19" izz="0.0010707437144987" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link5.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.96078431372549 0.117647058823529 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_link5.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_joint5" type="continuous">
+        <origin xyz="0 0.0500000000000003 -0.0499999999999998" rpy="-1.5707963267949 1.11731100296617 0" />
+        <parent link="arm2_link4" />
+        <child link="arm2_link5" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <link name="arm2_end_effector">
+        
+<inertial>
+            <origin xyz="0.0347525005713427 -1.11022302462516E-16 -0.000144066831606171" rpy="0 0 0" />
+            <mass value="0.306982526837746" />
+            <inertia ixx="0.000216244705183095" ixy="-2.03287907341032E-20" ixz="1.49251690973181E-06" iyy="0.000231480290788856" iyz="-7.83505476210228E-21" izz="0.000232187474288551" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_end_effector.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.752941176470588 0 0.752941176470588 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://grape_robot_description/meshes/arm2_end_effector.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="arm2_endjoint" type="fixed">
+        <origin xyz="0.0170416345659805 0 0.0750000000000006" rpy="-0.0253991759640897 0 0" />
+        <parent link="arm2_link5" />
+        <child link="arm2_end_effector" />
+        <axis xyz="0 0 0" />
+    </joint>
+    
+<transmission name="trans_wheel_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wheel_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_joint2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wheel_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_joint3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_joint3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wheel_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_joint4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_joint4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm1_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm1_joint1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm1_joint1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm1_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm1_joint2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm1_joint2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm1_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm1_joint3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm1_joint3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm1_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm1_joint4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm1_joint4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip_rightjoint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip_rightjoint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip_rightjoint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip_leftjoint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip_leftjoint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip_leftjoint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm2_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_joint1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm2_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_joint2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm2_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_joint3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm2_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_joint4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_arm2_joint5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint5">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_joint5_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+		<legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
+</robot>

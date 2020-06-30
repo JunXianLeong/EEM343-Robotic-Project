@@ -1,0 +1,27 @@
+controller_list:
+  - name: fake_arm1_grasping_controller
+    joints:
+      - arm1_joint1
+      - arm1_joint2
+      - arm1_joint3
+      - arm1_joint4
+  - name: fake_arm2_inspection_controller
+    joints:
+      - arm2_joint1
+      - arm2_joint2
+      - arm2_joint3
+      - arm2_joint4
+      - arm2_joint5
+  - name: fake_gripper_controller
+    joints:
+      - grip_leftjoint
+      - grip_rightjoint
+  - name: fake_camera_controller
+    joints:
+      []
+  - name: fake_car_wheels_controller
+    joints:
+      - wheel_joint1
+      - wheel_joint2
+      - wheel_joint3
+      - wheel_joint4

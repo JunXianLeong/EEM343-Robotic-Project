@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import string
 import copy
 import rospy
 import tf
@@ -40,12 +41,20 @@ moveit_commander.roscpp_initialize(sys.argv)
 rospy.init_node('move_group_python_interface_tutorial', anonymous=True)
 robot = moveit_commander.RobotCommander()
 
-#Define moving arm groups
 arm1_group = moveit_commander.MoveGroupCommander("arm1_grasping")
 arm2_group = moveit_commander.MoveGroupCommander("arm2_inspection")
-gripper_group = moveit_commander.MoveGroupCommander("gripper")
 
-#Scanning point(Arm 2)
+#Moving Arm 1 back to initial position
+print("Move Arm 1 to initial position...")
+joint_goal = arm1_group.get_current_joint_values()
+joint_goal[0] = 0
+joint_goal[1] = -2.2256
+joint_goal[2] = 2.40
+joint_goal[3] = 0
+plan1 = arm1_group.plan()
+arm1_group.go(joint_goal, wait=True)
+
+#Scanning point
 Q_1,Q_2,Q_3,Q_4,Q_5= inverse_kinematics_Arm2(0.20, 0.8, 1.5, 0, 0, 1)
 print("Move to scanning pose...")
 joint_goal = arm2_group.get_current_joint_values()
@@ -57,7 +66,6 @@ joint_goal[4] = Q_5
 plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
-#Rotating camera for scanning
 print("Start scanning...")
 joint_goal = arm2_group.get_current_joint_values()
 joint_goal[4] = 0.2
@@ -79,11 +87,13 @@ for x in range(1, 5, 1):
    if joint_goal[4]== 0.2:
        break
 
-
 print("Stop scanning.")
 
-#Grape 1 focusing point (Arm 2)
+print("Focusing on Grape 1.")
+
+#Grape 1 focusing point
 Q_1,Q_2,Q_3,Q_4,Q_5= inverse_kinematics_Arm2(0.1, 0.4, 1.5, 0, 0, 1)
+
 joint_goal = arm2_group.get_current_joint_values()
 joint_goal[0] = Q_1
 joint_goal[1] = Q_2
@@ -94,61 +104,29 @@ plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
 joint_goal = arm2_group.get_current_joint_values()
-joint_goal[4] = -0.35
+joint_goal[4] = -0.2
 plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
-#Move to grape 1
-translation1=[0.873, -0.575, 1.539]
-x= 0.873
-y= -0.575
-z= 1.539
-z+= 0.15
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-print("Grasping Grape 1...")
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
+command=raw_input("Continue? Y/N   ")
+if command == "Y" or "y":
+    print("Focusing on Grape 2.")
+else:
+    print("Closing program...")
+    print("5")
+    rospy.sleep(1)
+    print("4")
+    rospy.sleep(1)
+    print("3")
+    rospy.sleep(1)
+    print("2")
+    rospy.sleep(1)
+    print("1")
+    rospy.sleep(1)
+    moveit_commander.roscpp_shutdown()
+    sys.exit()
 
-#Move close to grape 1
-x+= 0.30
-y-= 0.20
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
-
-#Close Gripper
-print("Closing gripper...")
-joint_goal = gripper_group.get_current_joint_values()
-joint_goal[0] = 1.5
-joint_goal[1] = -1.5
-plan3 = gripper_group.plan()
-gripper_group.go(joint_goal, wait=True)
-
-#Moving the grape upward
-z+= 0.15
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-print("Moving Grape 1...")
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
-
-rospy.sleep(3)
-
-#Drop grape 1
+#Drop grape
 print("Drop Grape 1 to basket...")
 joint_goal = arm1_group.get_current_joint_values()
 joint_goal[0] = 1.5880
@@ -158,15 +136,8 @@ joint_goal[3] = 0.5003
 plan1 = arm1_group.plan()
 arm1_group.go(joint_goal, wait=True)
 
-#Open gripper
-print("Open gripper...")
-joint_goal = gripper_group.get_current_joint_values()
-joint_goal[0] = 0.9144
-joint_goal[1] = -0.9144
-plan3 = gripper_group.plan()
-gripper_group.go(joint_goal, wait=True)
-
-#Set Arm 1 to initial pose
+#Set Arm 1 Link 1 to initial pose
+print("Grasping Grape 2...")
 joint_goal = arm1_group.get_current_joint_values()
 joint_goal[2] = 1.8
 joint_goal[3] = 0
@@ -177,8 +148,6 @@ joint_goal = arm1_group.get_current_joint_values()
 joint_goal[0] = 0
 plan1 = arm1_group.plan()
 arm1_group.go(joint_goal, wait=True)
-
-#Grape 1 is collected
 
 #Grape 2 focusing point
 #Viapoint 1(to avoid obstacle)
@@ -203,7 +172,7 @@ joint_goal[4] = Q_5
 plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
-#Final viapoint for focusing pose
+#Final point
 Q_1,Q_2,Q_3,Q_4,Q_5= inverse_kinematics_Arm2(0.8, 1.3, 1.0, 0, 0, 1)
 joint_goal = arm2_group.get_current_joint_values()
 joint_goal[0] = Q_1
@@ -219,75 +188,24 @@ joint_goal[4] = -0.25
 plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
-#Move to Grape 2
-print("Grasping Grape 2...")
-translation2=[1.577, 0.735, 1.017]
-x= 1.577
-y= 0.735
-z= 1.017
-z+= 0.15
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
+command=raw_input("Continue? Y/N   ")
+if command == "Y" or "y":
+    print("Focusing on Grape 2.")
+else:
+    print("Closing program...")
+    print("5")
+    rospy.sleep(1)
+    print("4")
+    rospy.sleep(1)
+    print("3")
+    rospy.sleep(1)
+    print("2")
+    rospy.sleep(1)
+    print("1")
+    rospy.sleep(1)
+    moveit_commander.roscpp_shutdown()
+    sys.exit()
 
-#Move close to grape 2
-x+= 0.10
-y+= 0.15
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
-
-#Close Gripper
-print("Closing gripper...")
-joint_goal = gripper_group.get_current_joint_values()
-joint_goal[0] = 1.5
-joint_goal[1] = -1.5
-plan3 = gripper_group.plan()
-gripper_group.go(joint_goal, wait=True)
-
-#Moving the grape upward
-z+= 0.15
-Q_1,Q_2,Q_3,Q_4= inverse_kinematics_Arm1(x, y, z, 0)
-print("Moving Grape 2...")
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = Q_1
-joint_goal[1] = Q_2
-joint_goal[2] = Q_3
-joint_goal[3] = Q_4
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
-
-rospy.sleep(3)
-
-#Drop grape 2
-print("Drop Grape 1 to basket...")
-joint_goal = arm1_group.get_current_joint_values()
-joint_goal[0] = 1.5880
-joint_goal[1] = -2.1221
-joint_goal[2] = 2.4000
-joint_goal[3] = 0.5003
-plan1 = arm1_group.plan()
-arm1_group.go(joint_goal, wait=True)
-
-#Open gripper
-print("Open gripper...")
-joint_goal = gripper_group.get_current_joint_values()
-joint_goal[0] = 0.9144
-joint_goal[1] = -0.9144
-plan3 = gripper_group.plan()
-gripper_group.go(joint_goal, wait=True)
-
-#All grapes are collected
 #Reset all robot arms back to initial positions
 print("Move Arm 2 to initial position...")
 
@@ -334,6 +252,7 @@ joint_goal[4] = 0
 plan2 = arm2_group.plan()
 arm2_group.go(joint_goal, wait=True)
 
+#Moving Arm 1 back to initial position
 print("Move Arm 1 to initial position...")
 joint_goal = arm1_group.get_current_joint_values()
 joint_goal[0] = 0
@@ -343,5 +262,5 @@ joint_goal[3] = 0
 plan1 = arm1_group.plan()
 arm1_group.go(joint_goal, wait=True)
 
-rospy.sleep(5)
+rospy.sleep(3)
 moveit_commander.roscpp_shutdown()

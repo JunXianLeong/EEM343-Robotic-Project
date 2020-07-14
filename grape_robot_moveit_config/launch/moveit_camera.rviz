@@ -358,6 +358,148 @@ Visualization Manager:
         Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 1
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.00999999978
+      Style: Flat Squares
+      Topic: /camera/depth/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        arm1_base_link:
+          Value: true
+        arm1_link1:
+          Value: true
+        arm1_link2:
+          Value: true
+        arm1_link3:
+          Value: true
+        arm1_link4:
+          Value: true
+        arm2_base_link:
+          Value: true
+        arm2_end_effector:
+          Value: true
+        arm2_link1:
+          Value: true
+        arm2_link2:
+          Value: true
+        arm2_link3:
+          Value: true
+        arm2_link4:
+          Value: true
+        arm2_link5:
+          Value: true
+        base_footprint:
+          Value: true
+        basket_link:
+          Value: true
+        camera:
+          Value: true
+        camera_link_optical:
+          Value: true
+        car_base_link:
+          Value: true
+        grip_leftlink:
+          Value: true
+        grip_rightlink:
+          Value: true
+        hokuyo:
+          Value: true
+        object_10:
+          Value: true
+        object_11:
+          Value: true
+        object_7:
+          Value: true
+        object_8:
+          Value: true
+        odom:
+          Value: true
+        wheel_link1:
+          Value: true
+        wheel_link2:
+          Value: true
+        wheel_link3:
+          Value: true
+        wheel_link4:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_footprint:
+            car_base_link:
+              arm1_base_link:
+                arm1_link1:
+                  arm1_link2:
+                    arm1_link3:
+                      arm1_link4:
+                        grip_leftlink:
+                          {}
+                        grip_rightlink:
+                          {}
+              arm2_base_link:
+                arm2_link1:
+                  arm2_link2:
+                    arm2_link3:
+                      arm2_link4:
+                        arm2_link5:
+                          arm2_end_effector:
+                            camera:
+                              camera_link_optical:
+                                object_10:
+                                  {}
+                                object_11:
+                                  {}
+                                object_7:
+                                  {}
+                                object_8:
+                                  {}
+              basket_link:
+                {}
+              hokuyo:
+                {}
+              wheel_link1:
+                {}
+              wheel_link2:
+                {}
+              wheel_link3:
+                {}
+              wheel_link4:
+                {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -374,25 +516,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 6.43489981
+      Distance: 5.82938957
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.113567002
-        Y: 0.105920002
-        Z: 2.23518001e-07
+        X: 1.04603732
+        Y: 1.06853509
+        Z: -4.91737751e-07
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.509796977
+      Pitch: 0.494797051
       Target Frame: base_footprint
       Value: XYOrbit (rviz)
-      Yaw: 5.65994978
+      Yaw: 6.19495678
     Saved: ~
 Window Geometry:
   Displays:

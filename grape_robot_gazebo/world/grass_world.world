@@ -1,0 +1,101 @@
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://grass_plane</uri>
+    </include>
+ <population name="tree_population1">
+      <model name="tree1">
+        <include>
+          <static>true</static>
+          <uri>model://grape_tree</uri>
+        </include>
+      </model>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>50 5 0.1</size>
+      </box>
+      <model_count>5</model_count>
+      <distribution>
+        <type>linear-x</type>
+      </distribution>
+    </population>
+ <population name="tree_population2">
+      <model name="tree2">
+        <include>
+          <static>true</static>
+          <uri>model://grape_tree</uri>
+        </include>
+      </model>
+      <pose>0 10 0 0 0 0</pose>
+      <box>
+        <size>50 5 0.1</size>
+      </box>
+      <model_count>5</model_count>
+      <distribution>
+        <type>linear-x</type>
+      </distribution>
+    </population>
+ <population name="tree_population3">
+      <model name="tree3">
+        <include>
+          <static>true</static>
+          <uri>model://grape_tree</uri>
+        </include>
+      </model>
+      <pose>0 -10 0 0 0 0</pose>
+      <box>
+        <size>50 5 0.1</size>
+      </box>
+      <model_count>5</model_count>
+      <distribution>
+        <type>linear-x</type>
+      </distribution>
+    </population>
+
+   <model name="grape_1">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+      <pose frame=''> 5.3 -1.0 2.0 0 0 -1.57</pose>
+    </model>
+
+    <model name="grape_2">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+      <pose frame=''> 4.0 -0.5 1.5 0 0 -1.57</pose>
+    </model>
+
+    <model name="grape_3">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+      <pose frame=''>-4.7 -1.0 2.0 0 0 -1.57</pose>
+    </model>
+
+    <model name="grape_4">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+       <pose frame=''>-6.0 -0.5 1.5 0 0 -1.57</pose>
+    </model>
+
+    <model name="grape_5">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+       <pose frame=''>-14.7 -1.0 2.0 0 0 -1.57</pose>
+    </model>
+
+    <model name="grape_6">
+      <include>
+        <uri>model://grape</uri>
+      </include>
+       <pose frame=''>-16.0 -0.5 1.5 0 0 -1.57</pose>
+    </model>
+
+  </world>
+</sdf>

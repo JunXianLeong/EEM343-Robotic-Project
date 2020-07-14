@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(find grape_robot_gazebo)/world/empty_world.world"/> 
+		<arg name="world_name" value="$(find grape_robot_gazebo)/world/demo_world.world"/> 
 		<arg name="paused" value="false"/>
 		<arg name="use_sim_time" value="true"/>
 		<arg name="gui" value="true"/>
@@ -10,14 +10,14 @@
 	</include>
 
 	<!-- Load the URDF into the parameter server -->
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find grape_robot_description)/urdf/grape_robot.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find grape_robot_description)/urdf/grape_robot.urdf.xacro' --inorder" />
 
 	<!-- Spin up the node that will spawn the robot model is defined in the URDF -->
 	<node 
 		name="spawn_urdf" 
 		pkg="gazebo_ros" 
 		type="spawn_model" 
-		args="-param robot_description -urdf -model grape_robot" 
+		args="-param robot_description -urdf -x 0 -y -3 -z 0 -model grape_robot" 
 	/> 
 
 	  <!-- Robot state publisher -->

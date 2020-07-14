@@ -10,7 +10,7 @@ Location of Main files:
 4) Gazebo models used in simulation: /gazebo_models
 5) Object recognition launch file: /grobot_object_recognition_pkg
 
-If you want to watch my demonstration video, click on the link below:
-https://drive.google.com/file/d/1HRo65S2fUXBaIiG0Ccc3JlArYPnmMcen/view?usp=sharing
+If you want to watch my demonstration video, please download demo_video.mp4 file in this branch, or click on the link below:
+https://drive.google.com/file/d/1bWF07R_cJQxbPZIZM_ZM8WBI0yoEWobu/view?usp=sharing
 
 Updated at 14/7/2020.

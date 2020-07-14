@@ -9,6 +9,7 @@
   <xacro:property name="cameraHeight" value="0.02"/>
   <xacro:property name="cameraMass" value="0.1"/>
 
+<!-- Include more gazebo plugin into this file -->
  <xacro:include filename="$(find grape_robot_description)/urdf/grape_robot.gazebo" />
 
 <!-- root link, on the ground just below the model origin -->

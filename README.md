@@ -12,7 +12,7 @@ Location of Main files:
 5) Object recognition launch file: /grobot_object_recognition_pkg
 
 
-If you want to watch my demonstration video, click on the link below:
+If you want to watch my demonstration video, please download demo_video.mp4 located in this branch, or click on the link below:
 https://drive.google.com/file/d/1HRo65S2fUXBaIiG0Ccc3JlArYPnmMcen/view?usp=sharing
 
 Updated at 14/7/2020.

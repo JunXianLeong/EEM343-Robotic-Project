@@ -1,0 +1,72 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="grape_tree">
+     <static>true</static>
+    <link name="body">
+      <pose>0 0 0.1 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.20</radius>
+            <length>6.0</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+        <mesh>
+          <uri>/home/samleong/gazebo_models/grape_tree/model.dae</uri>
+	 <scale>4.5 4.5 4.5</scale>
+	<pose>0 0 0 0 0 1.57</pose>
+        </mesh>
+      </geometry>
+      </visual>
+    </link>
+    <link name="vine1">
+        <pose>-1.0 -0.5 1.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+        <box>
+          <size>0.4 .4 .1</size>
+        </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+        <box>
+          <size>0.1 0.1 .1</size>
+        </box>
+          </geometry>
+ 	<material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        </visual>
+      </link>
+	<link name="vine2">
+        <pose>0.3 -1.0 2.0 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+        <box>
+          <size>0.4 .4 .1</size>
+        </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+        <box>
+          <size>0.1 0.1 .1</size>
+        </box>
+          </geometry>
+ 	<material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        </visual>
+      </link>
+  </model>
+ </sdf>

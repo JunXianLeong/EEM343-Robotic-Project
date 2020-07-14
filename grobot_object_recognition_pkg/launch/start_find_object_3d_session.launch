@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="settings_path" default="~/.ros/find_object_2d.ini"/>
+	
+	<node name="find_object_3d" pkg="find_object_2d" type="find_object_2d" output="screen">
+		<param name="gui" value="true" type="bool"/>
+		<param name="settings_path" value="$(arg settings_path)" type="str"/>
+		<param name="subscribe_depth" value="true" type="bool"/>
+		<param name="session_path" value="$(find grobot_object_recognition_pkg)/saved_picture/grape_session.bin" type="str"/>		
+		<param name="objects_path" value="" type="str"/>
+		<param name="object_prefix" value="object" type="str"/>
+				
+		<remap from="rgb/image_rect_color" to="/camera/color/image_raw"/>
+		<remap from="depth_registered/image_raw" to="/camera/depth/image_raw"/>
+		<remap from="depth_registered/camera_info" to="/camera_ir/depth/camera_info"/>
+	</node>
+</launch>

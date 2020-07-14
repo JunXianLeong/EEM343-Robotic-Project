@@ -121,7 +121,7 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 arm1_grasping:
-  default_planner_config: RRT
+  default_planner_config: None
   planner_configs:
     - SBL
     - EST
@@ -177,7 +177,7 @@ arm2_inspection:
   projection_evaluator: joints(arm2_joint1,arm2_joint2)
   longest_valid_segment_fraction: 0.005
 gripper:
-  default_planner_config: ""
+  default_planner_config: None
   planner_configs:
     - SBL
     - EST
@@ -205,7 +205,7 @@ gripper:
   projection_evaluator: joints(grip_leftjoint,grip_rightjoint)
   longest_valid_segment_fraction: 0.005
 camera:
-  default_planner_config: ""
+  default_planner_config: None
   planner_configs:
     - SBL
     - EST
@@ -230,31 +230,3 @@ camera:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-car_wheels:
-  default_planner_config: ""
-  planner_configs:
-    - SBL
-    - EST
-    - LBKPIECE
-    - BKPIECE
-    - KPIECE
-    - RRT
-    - RRTConnect
-    - RRTstar
-    - TRRT
-    - PRM
-    - PRMstar
-    - FMT
-    - BFMT
-    - PDST
-    - STRIDE
-    - BiTRRT
-    - LBTRRT
-    - BiEST
-    - ProjEST
-    - LazyPRM
-    - LazyPRMstar
-    - SPARS
-    - SPARStwo
-  projection_evaluator: joints(wheel_joint1,wheel_joint2)
-  longest_valid_segment_fraction: 0.005

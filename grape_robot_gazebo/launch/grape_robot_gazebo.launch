@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="world_name" value="$(find grape_robot_gazebo)/world/empty_world.world"/> 
@@ -9,7 +10,7 @@
 	</include>
 
 	<!-- Load the URDF into the parameter server -->
-	<param name="robot_description" textfile='$(find grape_robot_description)/urdf/grape_robot.urdf' />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find grape_robot_description)/urdf/grape_robot.urdf.xacro'" />
 
 	<!-- Spin up the node that will spawn the robot model is defined in the URDF -->
 	<node 

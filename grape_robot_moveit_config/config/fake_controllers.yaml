@@ -19,9 +19,3 @@ controller_list:
   - name: fake_camera_controller
     joints:
       []
-  - name: fake_car_wheels_controller
-    joints:
-      - wheel_joint1
-      - wheel_joint2
-      - wheel_joint3
-      - wheel_joint4

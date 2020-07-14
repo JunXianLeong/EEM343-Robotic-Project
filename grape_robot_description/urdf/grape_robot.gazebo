@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!--Gazebo plugins for grape_robot.urdf.xacro -->
 <robot>
  <gazebo>
     <plugin name="car_controller" filename="libgazebo_ros_planar_move.so">

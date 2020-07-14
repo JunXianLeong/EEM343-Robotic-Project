@@ -1,0 +1,95 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="grape">
+     <static>false</static>
+    <link name="body">
+      <pose>0 0 0.2 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.05</radius>
+            <length>.40</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+        <mesh>
+          <uri>/home/samleong/gazebo_models/grape/model.dae</uri>
+ 	   <scale>2.0 2.0 2.0</scale>
+        </mesh>
+      </geometry>
+      </visual>
+    </link>
+
+    <link name="vine">
+        <pose>0 0 0.50 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.005</radius>
+              <length>.20</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>.005</radius>
+              <length>.20</length>
+            </cylinder>
+          </geometry>
+ 	<material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        </visual>
+      </link>
+    <link name="head">
+        <pose>0 0 0.60 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.035</radius>
+              <length>.02</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>.035</radius>
+              <length>.02</length>
+            </cylinder>
+          </geometry>
+ 	<material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        </visual>
+      </link>
+      <joint type="fixed" name="vine_joint">
+        <pose>0 0 0.1 0 0 0</pose>
+        <child>vine</child>
+        <parent>body</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+
+      <joint type="fixed" name="head_joint">
+        <pose>0 0 0.03 0 0 0</pose>
+        <child>head</child>
+        <parent>vine</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+  </model>
+ </sdf>
